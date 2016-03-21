@@ -66,7 +66,7 @@ flipCasper.waitForSelector('.results #products .product-unit', function() {
 }, 20000)
 
 flipCasper.run(function() {
-  this.echo('Flipkart Scraping done')
+  this.echo('Flipkart Comparing done')
   flipDone = true
   if (snapDone) {
     fs.write(resultPath, JSON.stringify(product), 'w')
@@ -112,7 +112,7 @@ snapCasper.waitForSelector('#products', function() {
 }, 20000)
 
 snapCasper.run(function() {
-  this.echo('Snapdeal Scraping done')
+  this.echo('Snapdeal Comparing done')
   snapDone = true
   if (flipDone) {
     fs.write(resultPath, JSON.stringify(product), 'w')
