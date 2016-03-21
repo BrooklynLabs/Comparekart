@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CompareKart</title>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="cover"> 
+    <div class="logo-content">
+      <div class="visible">
+         
+        <p><b>  CompareKart </b></p>
+      </div>
+	  <br>
+	  <br>
+	  <div class= "bottomright">
+	   <img src="img/snapdeal.png" alt="snapdeal logo1" style="opacity: 1.5;
+    filter: alpha(opacity=20); width: 500px; height: 150px; position: static;">
+	   <img src="img/flipkart.png" alt="flipkart logo1" style="opacity: 1.5;
+    filter: alpha(opacity=20); width: 500px; height: 90px; position:relative;left:1100px;bottom: 140px;">
+	  </div>
+    </div>   
+	
+    <div class="search">
+      <i class="fa fa-search"></i>
+    </div>
+    <div class="search-input">
+      <input type="search" id="search-input" placeholder=" Search..." />
+     </div>
+<!--
+    
+    <div class="loading" id="loading">
+      <i class="fa fa-circle-o-notch fa-spin fa-4x"></i>
+    </div>
+-->
+      
+  </div>
+  
+  <div class="sortby">
+	<p style="font-size: 2.5em; font-family: 'Open Sans Condensed', sans-serif;">Sort by:-</p>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="relevance">
+      <input type="radio" id="relevance" class="mdl-radio__button" name="options" value="1" checked>
+      <span class="mdl-radio__label">Relevance</span>
+    </label>
+	<br>
+	<br>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="popular">
+      <input type="radio" id="popular" class="mdl-radio__button" name="options" value="2">
+      <span class="mdl-radio__label">Popular</span>
+    </label>
+	<br>
+	<br>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="highprice">
+      <input type="radio" id="highprice" class="mdl-radio__button" name="options" value="3">
+      <span class="mdl-radio__label">High Price</span>
+    </label>
+	<br>
+	<br>
+    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="lowprice">
+      <input type="radio" id="lowprice" class="mdl-radio__button" name="options" value="4">
+      <span class="mdl-radio__label">Low Price</span>
+    </label>
+  </div>
+  
+  <div class="error">
+    <h2>Server might be busy. Try searching again.</h2>
+  </div>
+  
+   <div class="products">
+    <div class="flipkart col-6">
+      <div class="flipkart-logo">
+        <img src="img/flipkart.png" alt="flipkart logo">
+      </div>
+      <div class="flipkart-error">
+        <p>Data not available</p>
+      </div>
+
+    </div>
+        
+    <div class="snapdeal col-6">
+      <div class="snapdeal-logo">
+        <img src="img/snapdeal.png" alt="snapdeal logo">
+      </div>
+      <div class="snapdeal-error">
+        <p>Data not available</p>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="more-results-head">
+    <div class="container">
+      Need more suggestions?
+    </div>
+  </div>
+  
+  <div class="more-results-button">
+    <div class="container">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" id="more-results">Show more results</button>
+    </div>
+  </div>
+  
+  <div class="more-results">
+    <div class="filter-cover" id="filter">
+      <div class="filter-title">Filter</div>
+      
+      <div class="filter">
+        <div class="price-range filter-type">
+          <div class="title">Price Range</div>
+          <div class="input">
+            <form action="#">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="from">
+                <label class="mdl-textfield__label" for="from">From</label>
+                <span class="mdl-textfield__error">Input is not a number!</span>
+              </div>
+            </form>
+            <form action="#">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="to">
+                <label class="mdl-textfield__label" for="to">To</label>
+                <span class="mdl-textfield__error">Input is not a number!</span>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <div class="reviews filter-type">
+          <div class="title">Reviews</div>
+          <div class="input">
+            <form action="#">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="reviews">
+                <label class="mdl-textfield__label" for="reviews">Reviews</label>
+                <span class="mdl-textfield__error">Input is not a number!</span>
+              </div>
+            </form>
+          </div>
+        </div>     
+         
+        <div class="ratings filter-type">
+          <div class="title">Ratings</div>
+          <div class="input">
+            <form action="#">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="ratings">
+                <label class="mdl-textfield__label" for="ratings">Ratings</label>
+                <span class="mdl-textfield__error">Input is not a number!</span>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <div class="keyword filter-type">
+          <div class="title">Keyword</div>
+          <div class="input">
+            <form action="#">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="keyword">
+                <label class="mdl-textfield__label" for="keyword">Keyword</label>
+              </div>
+            </form>
+          </div>
+        </div>        
+      </div>
+      
+      <div class="filter-website">
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="flipkart-label">
+          <input type="checkbox" id="flipkart-label" class="mdl-checkbox__input" checked>
+          <span class="mdl-checkbox__label">Flipkart</span>
+        </label>
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="snapdeal-label">
+          <input type="checkbox" id="snapdeal-label" class="mdl-checkbox__input" checked>
+          <span class="mdl-checkbox__label">Snapdeal</span>
+        </label>
+      </div>
+      
+      <div class="filter-button">
+        <div class="container">
+          <span>Submit</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="more-results-error">
+      Data not available
+    </div>
+
+    <div class="flipkart-img">
+      <img src="img/flipkart.png">
+    </div>
+    
+    <div class="flipkart">
+    
+    </div>
+    
+    <div class="snapdeal-img">
+      <img src="img/snapdeal.png">
+    </div>
+    
+    <div class="snapdeal">
+      
+    </div>
+  </div>
+</body>
+
+</html>
