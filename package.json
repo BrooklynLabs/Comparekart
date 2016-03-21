@@ -1,0 +1,16 @@
+{
+  "name": "web-scrapper",
+  "version": "0.0.1",
+  "description": "A Flipkart and Snapdeal scraper",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Mohamad shiras",
+  "private": true,
+  "dependencies": {
+    "casper": "0.1.1",
+    "express": "4.13.4",
+    "request": "2.69.0"
+  }
+}
