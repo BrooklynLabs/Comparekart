@@ -20,7 +20,7 @@ app.get('/scrape', function (req, res) {
     , flipSort = args.flipSort
     , snapSort = args.snapSort
   console.log(searchQuery)
-  exec('casperjs server.js ' + searchQuery + ' ' + flipSort + ' ' + snapSort, function(err, stdout, stderr) {
+  exec('node_modules/.bin/casperjs server.js ' + searchQuery + ' ' + flipSort + ' ' + snapSort, function(err, stdout, stderr) {
     if (err) {
       console.log(err)
       res.json({
