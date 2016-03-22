@@ -9,6 +9,7 @@
   "author": "Mohamad shiras",
   "private": true,
   "dependencies": {
+    "casperjs": "1.1.0-beta5",
     "casper": "0.1.1",
     "express": "4.13.4",
     "request": "2.69.0"
